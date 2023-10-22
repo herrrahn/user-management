@@ -1,0 +1,18 @@
+<ul>
+  <li routerLink="user-details">Cadastro</li>
+  <li routerLink="user-list">Pesquisa</li>
+  <li (click)="logout()" *ngIf="isLoggedIn()">logout</li>
+  <li (click)="loginPopup()" *ngIf="!isLoggedIn()">login</li>
+</ul>
+
+<div>
+ <button (click)="getProfile()" >Load profile</button>
+<!--  <p><strong>Active acc: </strong> {{name}}</p>-->
+
+  <p><strong>First Name: </strong> {{profile?.givenName}}</p>
+  <p><strong>Last Name: </strong> {{profile?.surname}}</p>
+  <p><strong>Email: </strong> {{profile?.userPrincipalName}}</p>
+  <p><strong>Id: </strong> {{profile?.id}}</p>
+</div>
+
+<hr>
